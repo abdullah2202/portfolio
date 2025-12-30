@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mohammad Abdullah | DevOps Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Mohammad Abdullah</h1>
+    <p>DevOps Engineer | AWS | Terraform | CI/CD</p>
+  </header>
+
+  <section>
+    <h2>Projects</h2>
+    <div id="projects"></div>
+  </section>
+
+  <footer>
+    <p>© 2026 Mohammad Abdullah</p>
+  </footer>
+
+  <script>
+    fetch('projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('projects');
+        data.forEach(p => {
+          container.innerHTML += `
+            <div class="project">
+              <h3>${p.name}</h3>
+              <p>${p.description}</p>
+              <a href="${p.github}" target="_blank">GitHub</a>
+            </div>`;
+        });
+      });
+  </script>
+</body>
+</html>
