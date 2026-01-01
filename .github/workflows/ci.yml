@@ -1,15 +1,33 @@
 name: CI Checks
+
 on:
   pull_request:
     branches: [dev, main]
 
 jobs:
-  lint:
+  terraform-validate:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
-      - name: Validate Terraform
+
+      # ✅ Install Terraform on the runner
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform fmt (check)
+        run: terraform fmt -check -recursive
+
+      - name: Terraform validate (dev)
         run: |
           cd terraform/dev
+          terraform init -backend=false
+          terraform validate
+
+      - name: Terraform validate (prod)
+        run: |
+          cd terraform/prod
           terraform init -backend=false
           terraform validate
