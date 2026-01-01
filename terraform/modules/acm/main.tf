@@ -1,6 +1,6 @@
 resource "aws_acm_certificate" "this" {
-   domain_name       = var.domain_name
-   validation_method = "DNS"
+  domain_name       = var.domain_name
+  validation_method = "DNS"
 }
 
 resource "aws_acm_certificate_validation" "this" {
@@ -9,5 +9,5 @@ resource "aws_acm_certificate_validation" "this" {
 }
 
 output "arn" {
-   value = aws_acm_certificate.this.arn
+  value = aws_acm_certificate.this.arn
 }
