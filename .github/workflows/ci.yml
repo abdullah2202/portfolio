@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # ✅ Install Terraform on the runner
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -24,12 +25,9 @@ jobs:
           cd terraform/dev
           terraform init -backend=false
           terraform validate
-<<<<<<< HEAD
-=======
 
       - name: Terraform validate (prod)
         run: |
           cd terraform/prod
           terraform init -backend=false
           terraform validate
->>>>>>> 58f06da (fixed terraform setup on ci)
