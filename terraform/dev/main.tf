@@ -1,5 +1,5 @@
 provider "aws" {
-   region = "us-east-1"
+  region = "us-east-1"
 }
 
 module "s3" {
@@ -8,16 +8,16 @@ module "s3" {
 }
 
 module "acm" {
-  source = "../modules/acm"
+  source      = "../modules/acm"
   domain_name = "dev.mabdullah.dev"
 }
 
 module "cdn" {
-  source        = "../modules/cloudfront"
+  source              = "../modules/cloudfront"
   bucket_name         = module.s3.bucket_name
-  bucket_domain_name = module.s3.bucket_domain_name
-  acm_certificate_arn       = module.acm.arn
-  domain_name        = "dev.mabdullah.dev"
+  bucket_domain_name  = module.s3.bucket_domain_name
+  acm_certificate_arn = module.acm.arn
+  domain_name         = "dev.mabdullah.dev"
 }
 
 data "aws_iam_policy_document" "allow_cloudfront_read" {
