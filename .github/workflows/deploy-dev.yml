@@ -1,11 +1,21 @@
 name: Deploy to Dev
+
 on:
   push:
     branches: [dev]
+    paths:
+      - "website/**"
+      - ".github/workflows/deploy-dev.yml"
+
+concurrency:
+  group: deploy-dev
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: dev
+
     steps:
       - uses: actions/checkout@v4
 
@@ -15,10 +25,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy Static Site to S3
-        run: aws s3 sync website/ s3://${{ secrets.DEV_BUCKET }} --delete
+      - name: Deploy Static Site to S3 (dev)
+        run: |
+          aws s3 sync website/ s3://${{ secrets.DEV_BUCKET }} --delete --exact-timestamps
 
-      - name: Invalidate CloudFront Cache
+      - name: Invalidate CloudFront Cache (dev)
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.DEV_CLOUDFRONT_DIST_ID }} \
