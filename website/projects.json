@@ -2,11 +2,16 @@
   {
     "name": "DevOps Portfolio",
     "description": "Terraform + AWS + GitHub Actions portfolio site",
-    "github": "https://github.com/abdullah2202/devops-portfolio"
+    "github": "https://github.com/abdullah2202/portfolio"
   },
   {
    "name" : "Oanda V20 Scanner Bot",
    "description": "Oanda V20 Strategy Scanner in Python",
    "github": "https://github.com/abdullah2202/oanda_python_notifier"
+  },
+  {
+   "name" : "KPWA Website",
+   "description": "KPWA react webiste with Terraform and GithubAction CI/CD",
+   "github": "https://github.com/abdullah2202/kpwa-website"
   }
 ]
