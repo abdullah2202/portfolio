@@ -25,9 +25,18 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy Static Site to S3 (prod)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install & build
+        working-directory: website
         run: |
-          aws s3 sync website/ s3://${{ secrets.PROD_BUCKET }} --delete --exact-timestamps
+          npm ci
+          npm run build
+
+      - name: Deploy build to S3 (prod)
+        run: aws s3 sync website/dist/ s3://${{ secrets.PROD_BUCKET }} --delete --exact-timestamps
 
       - name: Invalidate CloudFront Cache (prod)
         run: |
