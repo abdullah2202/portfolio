@@ -24,6 +24,7 @@ export default function About() {
         <Chip>CloudFront</Chip>
         <Chip>ACM</Chip>
         <Chip>GitHub Actions</Chip>
+        <Chip>Docker</Chip>
         <Chip>Linux</Chip>
       </div>
     </Section>

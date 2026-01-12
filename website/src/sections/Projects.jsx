@@ -3,31 +3,47 @@ import Section from "../components/Section";
 export default function Projects({ projects }) {
   return (
     <Section id="projects" title="Projects">
-      <p className="muted">Projects that demonstrate AWS infrastructure, Terraform IaC, and CI/CD automation.</p>
+      <p className="muted">
+        Projects that demonstrate AWS infrastructure, Terraform IaC, and CI/CD automation.
+      </p>
 
       <div className="grid">
         {projects.map((p) => (
           <article key={p.github} className="project">
-            <div className="projectTop">
-              <h3>{p.name}</h3>
-              <span className="badge">GitHub</span>
-            </div>
-            <p className="projectDesc">{p.description}</p>
-            {/* Highlights */}
-            {p.highlights && (
-              <ul className="projectHighlights">
-                {p.highlights.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            )}
+            <div className="projectBody">
+              <div className="projectTop">
+                <h3>{p.name}</h3>
+                <a
+                  className="badge badgeLink"
+                  href={p.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub ↗
+                </a>
+              </div>
 
-            <div className="projectActions">
-              <a className="link" href={p.github} target="_blank" rel="noreferrer">
-                View repo →
-              </a>
+              <p className="projectDesc">{p.description}</p>
+
+              {p.highlights?.length ? (
+                <ul className="projectHighlights">
+                  {p.highlights.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
+
+            {/* Stuck to bottom */}
+            {p.stack?.length ? (
+              <div className="projectChips" aria-label={`${p.name} stack`}>
+                {p.stack.map((t) => (
+                  <span key={t} className="chip chipSm">{t}</span>
+                ))}
+              </div>
+            ) : null}
           </article>
+
         ))}
       </div>
     </Section>

@@ -3,6 +3,7 @@
     "name": "DevOps Portfolio",
     "description": "Static site on AWS with Terraform IaC and GitHub Actions CI/CD, using staged deployments (dev → prod) and CloudFront cache invalidation.",
     "github": "https://github.com/abdullah2202/portfolio",
+    "stack": ["Terraform", "AWS", "GitHub Actions", "S3", "CloudFront"],
     "highlights": [
       "Terraform-managed S3 + CloudFront + ACM",
       "Dev environment + production promotion flow",
@@ -10,19 +11,21 @@
     ]
   },
   {
-   "name" : "Oanda Scanner Bot",
-   "description": "Python automation tool for scanning strategy signals—built with reproducible setup and clear run/ops documentation.",
-   "github": "https://github.com/abdullah2202/oanda_python_notifier",
-   "highlights": [
-      "Config-driven runs",
-      "Logging / alerts",
-      "Clean packaging/run instructions"
-    ]
-  },
+  "name": "Oanda Scanner Bot",
+  "description": "Python automation tool for scanning strategy signals, containerised with Docker for reproducible runs and simple ops.",
+  "github": "https://github.com/abdullah2202/oanda_python_notifier",
+  "stack": ["Docker", "Python"],
+  "highlights": [
+    "Dockerised runtime for consistent execution",
+    "Config-driven runs",
+    "Logging/alerts"
+  ]
+},
   {
    "name" : "KPWA Website",
    "description": "React website deployed with Terraform on AWS and CI/CD via GitHub Actions (build, deploy, and release workflow).",
    "github": "https://github.com/abdullah2202/kpwa-website",
+   "stack": ["Terraform", "AWS", "GitHub Actions"],
    "highlights": [
       "Repeatable infra with Terraform modules",
       "Automated deployments from GitHub",
