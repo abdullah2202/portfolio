@@ -10,12 +10,12 @@ export default function Pipeline() {
     >
       <div className="pipeline">
         <div className="card">
-          <h3>How deployments work</h3>
+          <h3>A simple, production-style workflow: changes are tested, deployed to a dev environment, then promoted to production.</h3>
           <ul className="pipelineList">
             <li><span className="dot dotAccent"></span> Create feature branch from <strong>dev</strong></li>
-            <li><span className="dot dotAccent"></span> PR to <strong>dev</strong> deploys to <strong>dev.mabdullah.dev</strong></li>
-            <li><span className="dot dotAccent"></span> PR to <strong>main</strong> deploys to <strong>mabdullah.dev</strong></li>
-            <li><span className="dot dotAccent"></span> Build + sync to S3 + CloudFront invalidation</li>
+            <li><span className="dot dotAccent"></span> Open a PR to <strong>dev</strong> → deploys to <strong>dev.mabdullah.dev</strong></li>
+            <li><span className="dot dotAccent"></span> Promote via PR into <strong>main</strong> → deploys to <strong>mabdullah.dev</strong></li>
+            <li><span className="dot dotAccent"></span> Build → upload artifacts to S3 → CloudFront invalidation</li>
           </ul>
 
           <div className="chips">
@@ -26,6 +26,8 @@ export default function Pipeline() {
             <Chip>CloudFront</Chip>
             <Chip>ACM</Chip>
           </div>
+
+          <h4>Goal: reduce manual steps and make releases repeatable, auditable, and safe.</h4>
         </div>
 
         <div className="card diagram" aria-label="CI/CD diagram">

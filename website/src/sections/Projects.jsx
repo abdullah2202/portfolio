@@ -3,7 +3,7 @@ import Section from "../components/Section";
 export default function Projects({ projects }) {
   return (
     <Section id="projects" title="Projects">
-      <p className="muted">Selected projects from my GitHub.</p>
+      <p className="muted">Projects that demonstrate AWS infrastructure, Terraform IaC, and CI/CD automation.</p>
 
       <div className="grid">
         {projects.map((p) => (

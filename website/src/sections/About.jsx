@@ -9,11 +9,14 @@ export default function About() {
       subtitle="A practical DevOps approach: repeatable infra and automated delivery."
     >
       <p className="muted">
-        I focus on building secure, reproducible AWS infrastructure and CI/CD pipelines that
-        reduce operational toil. This portfolio is designed to demonstrate how I work in real projects:
-        Infrastructure as Code, staged releases, and automated deployments.
+        I’m a junior/mid DevOps engineer focused on AWS infrastructure, Terraform, and CI/CD automation. I enjoy turning “runbooks” into pipelines so deployments are repeatable, environments are consistent, and teams spend less time on manual ops.
       </p>
-
+      <p className="muted">
+        This portfolio is intentionally built as an infrastructure project: Terraform-managed AWS resources, staged releases (dev → prod), and GitHub Actions deployments.
+      </p>
+      <p className="muted">
+        I’m comfortable in Linux environments and enjoy improving reliability through clear monitoring/logging and least-privilege IAM.
+      </p>
       <div className="chips">
         <Chip>Terraform</Chip>
         <Chip>AWS</Chip>

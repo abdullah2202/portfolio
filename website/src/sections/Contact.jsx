@@ -10,11 +10,14 @@ export default function Contact() {
     >
       <div className="card">
         <p className="muted">
-          If you’d like to discuss an opportunity or collaborate on a project, feel free to reach out.
+          I’m open to DevOps Engineer roles (junior/mid). If you’d like to discuss an opportunity or review my work, email me or connect on LinkedIn.
         </p>
 
-        {/* Replace with your email */}
-        <Button href="mailto:your.email@example.com">Email me</Button>
+        <div className="heroActions">
+          {/* Replace with your email */}
+          <Button href="mailto:hire@mabdullah.dev">Email me</Button>
+          <Button variant="ghost" href="#">LinkedIn</Button>
+        </div>
       </div>
     </Section>
   );
