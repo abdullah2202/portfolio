@@ -60,6 +60,12 @@ h1,h2,h3{ margin:0 0 10px; line-height:1.15; letter-spacing:-0.02em; }
 
 .hero{ padding:64px 0 28px; }
 .heroGrid{ display:grid; grid-template-columns: 1.35fr .85fr; gap:18px; align-items:start; }
+.heroEyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  letter-spacing: 0.2px;
+}
 
 .pill{
   display:inline-flex; padding:8px 12px; border-radius:999px;

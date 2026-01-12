@@ -10,7 +10,7 @@ export default function Contact() {
     >
       <div className="card">
         <p className="muted">
-          I’m open to DevOps Engineer roles (junior/mid). If you’d like to discuss an opportunity or review my work, email me or connect on LinkedIn.
+          I’m open to DevOps Engineer roles. If you’d like to discuss an opportunity or review my work, email me or connect on LinkedIn.
         </p>
 
         <div className="heroActions">
