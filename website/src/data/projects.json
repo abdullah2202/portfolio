@@ -25,6 +25,7 @@
    "name" : "KPWA Website",
    "description": "React website deployed with Terraform on AWS and CI/CD via GitHub Actions (build, deploy, and release workflow).",
    "github": "https://github.com/abdullah2202/kpwa-website",
+   "live": "https://kpwa.co.uk",
    "stack": ["Terraform", "AWS", "GitHub Actions"],
    "highlights": [
       "Repeatable infra with Terraform modules",

@@ -13,15 +13,34 @@ export default function Projects({ projects }) {
             <div className="projectBody">
               <div className="projectTop">
                 <h3>{p.name}</h3>
-                <a
-                  className="badge badgeLink"
-                  href={p.github}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
-                </a>
+
+                <div className="projectLinks">
+                  {p.live && (
+                    <a
+                      className="badge badgeLink badgeLive"
+                      href={p.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open live site for ${p.name}`}
+                      title="Open live deployment"
+                    >
+                      Live ↗
+                    </a>
+                  )}
+
+                  <a
+                    className="badge badgeLink"
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${p.name} repository on GitHub`}
+                    title="Open GitHub repo"
+                  >
+                    GitHub ↗
+                  </a>
+                </div>
               </div>
+
 
               <p className="projectDesc">{p.description}</p>
 
