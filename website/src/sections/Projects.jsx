@@ -13,6 +13,15 @@ export default function Projects({ projects }) {
               <span className="badge">GitHub</span>
             </div>
             <p className="projectDesc">{p.description}</p>
+            {/* Highlights */}
+            {p.highlights && (
+              <ul className="projectHighlights">
+                {p.highlights.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            )}
+
             <div className="projectActions">
               <a className="link" href={p.github} target="_blank" rel="noreferrer">
                 View repo →

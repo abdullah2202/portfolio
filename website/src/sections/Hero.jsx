@@ -38,7 +38,7 @@ export default function Hero({ projectCount }) {
         <aside className="heroCard">
           <div className="card">
             <div className="cardHeader">
-              <h2>Current Stack</h2>
+              <h2>This Site's Stack</h2>
               <p>This website is deployed like a real DevOps project (IaC + CI/CD).</p>
             </div>
             <ul className="list">
