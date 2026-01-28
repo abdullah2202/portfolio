@@ -1,0 +1,19 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(124,58,237,0.9)"/>
+      <stop offset="100%" stop-color="rgba(34,197,94,0.75)"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <text x="50%" y="54%"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-size="72"
+        font-weight="700"
+        font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        fill="rgba(255,255,255,0.92)">
+    A
+  </text>
+</svg>
